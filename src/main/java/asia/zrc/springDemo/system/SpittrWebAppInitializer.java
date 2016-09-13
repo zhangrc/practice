@@ -5,9 +5,9 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 /**
  * Created by zrc on 2016/9/12.
  */
-public class SpittrWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class SpittrWebAppInitializer /*extends AbstractAnnotationConfigDispatcherServletInitializer */{
     protected Class<?>[] getRootConfigClasses() {
-        return new Class<?>[]{ RootConfig.class};
+        return new Class<?>[0];
     }
 
     protected Class<?>[] getServletConfigClasses() {
