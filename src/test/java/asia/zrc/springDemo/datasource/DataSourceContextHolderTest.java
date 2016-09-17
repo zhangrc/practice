@@ -19,6 +19,7 @@ public class DataSourceContextHolderTest extends BaseTest {
         //切换数据源
         DataSourceContextHolder.setDataSourceType("dataSource_outer");
         System.out.println(baseService.getSystemTimeStamp());
+        //切换为默认数据源
         DataSourceContextHolder.clearDataSourceType();
         System.out.println(baseService.getSystemTimeStamp());
     }
