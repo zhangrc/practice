@@ -5,13 +5,13 @@
         xmlns:context="http://www.springframework.org/schema/context"
         xmlns:mvc="http://www.springframework.org/schema/mvc"
         xsi:schemaLocation="http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
 
 
     http://www.springframework.org/schema/context
-    http://www.springframework.org/schema/context/spring-context-4.2.xsd
+    http://www.springframework.org/schema/context/spring-context-3.2.xsd
     http://www.springframework.org/schema/mvc
-    http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
+    http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
     <!-- 默认的注解映射的支持 -->
     <mvc:annotation-driven/>
@@ -19,7 +19,7 @@
     <mvc:default-servlet-handler/>
 
     <!-- 自动扫描的包名 -->
-    <context:component-scan base-package="asia.zrc.springDemo.controller.*"></context:component-scan>
+    <context:component-scan base-package="asia.zrc.*.controller"></context:component-scan>
     <!--<context:component-scan base-package="com.yinhai.hyman.*.*.controller"></context:component-scan>-->
 
     <!-- 视图解析类(必须) -->
@@ -50,4 +50,24 @@
         <!--resolveLazily属性启用是为了推迟文件解析，以便在UploadAction 中捕获文件大小异常-->
         <property name="resolveLazily" value="true"/>
     </bean>
+
+    <!-- server 端 id 用 /  开头才能够访问-->
+    <bean id="/userService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service">
+            <bean class="asia.zrc.springDemo.httpInvoker.server.ServerImpl"/>
+        </property>
+        <property name="serviceInterface">
+            <value>asia.zrc.springDemo.httpInvoker.server.ServerInterface</value>
+        </property>
+    </bean>
+
+    <!-- TODO 需要测试这个是否有用  -->
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="urlMap">
+            <map>
+                <entry key="service" value-ref="/userService" />
+            </map>
+        </property>
+    </bean>
+    <!-- TODO 查看httpclient 是否可以对这个进行优化 -->
 </beans>

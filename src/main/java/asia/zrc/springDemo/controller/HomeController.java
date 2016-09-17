@@ -12,6 +12,7 @@ public class HomeController {
 
     @RequestMapping(value="/home",method = RequestMethod.GET)
     public String home() {
+        System.out.println("1");
        return "/WEB-INF/home";
     }
 }

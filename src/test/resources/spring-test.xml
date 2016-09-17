@@ -11,5 +11,16 @@
         http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 
 
+    <!-- 通过http连接远程系统  client 端使用方法 -->
+    <bean id="userService"
+          class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+        <property name="serviceUrl">
+            <value>http://localhost:8080/practice/userService</value>
+            <!--服务器IP地址：端口号/项目名称/（Server端web.xml中配置的<url-pattern>入口)/（服务器端配置的bean的name属性 -->
+        </property>
+        <property name="serviceInterface">
+            <value>asia.zrc.springDemo.httpInvoker.server.ServerInterface</value>
+        </property>
+    </bean>
 
 </beans>
