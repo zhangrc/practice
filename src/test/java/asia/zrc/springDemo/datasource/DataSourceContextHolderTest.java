@@ -1,7 +1,7 @@
 package asia.zrc.springDemo.datasource;
 
 import asia.zrc.springDemo.common.service.BaseService;
-import base.BaseTest;
+import asia.zrc.BaseTest;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,6 +18,8 @@ public class DataSourceContextHolderTest extends BaseTest {
         System.out.println(baseService.getSystemTimeStamp());
         //切换数据源
         DataSourceContextHolder.setDataSourceType("dataSource_outer");
+        System.out.println(baseService.getSystemTimeStamp());
+        DataSourceContextHolder.clearDataSourceType();
         System.out.println(baseService.getSystemTimeStamp());
     }
 }
