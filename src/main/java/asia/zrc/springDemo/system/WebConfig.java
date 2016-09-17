@@ -13,9 +13,9 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  * Created by zrc on 2016/9/16.
  * 初始化mvc 的配置代码
  */
-@Configuration
-@EnableWebMvc
-@ComponentScan("asia.zrc.*.controller")
+//@Configuration
+//@EnableWebMvc
+//@ComponentScan("asia.zrc.*.controller")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Bean

@@ -2,6 +2,7 @@ package asia.zrc.springDemo.common.service.impl;
 
 import asia.zrc.springDemo.common.DB.IDao;
 import asia.zrc.springDemo.common.service.BaseService;
+import asia.zrc.springDemo.datasource.DataSourceContextHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
