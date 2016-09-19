@@ -8,13 +8,14 @@
         http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
 
+    <import resource="spring-*.xml"/>
     <import resource="classpath:data/spring-*.xml"/>
-    <import resource="classpath:spring-*.xml"/>
 
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
                 <value>classpath:jdbc.properties</value>
+                <value>classpath:activemq.properties</value>
             </list>
         </property>
     </bean>
