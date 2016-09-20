@@ -1,5 +1,6 @@
 package asia.zrc.springDemo.httpInvoker.server;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -17,7 +18,7 @@ import java.util.Map;
  */
 @ContextConfiguration(locations = { "classpath:spring-test.xml"})
 public class ServerInterfaceTest extends AbstractJUnit4SpringContextTests {
-
+    @Ignore
     @Test
     public void testRemote() {
         ServerInterface service = (ServerInterface) super.applicationContext.getBean("userService");
