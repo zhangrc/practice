@@ -6,6 +6,8 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -25,7 +27,7 @@ public class MisLog {
     public int getCount(String at) throws IOException {
         return (int) Files.lines(path, Charset.forName("UTF-8"))
                 .flatMap(s -> {
-                   return Stream.of(s.split(" "));
+                    return Stream.of(s.split(" "));
                 })
                 .map(s -> s.trim())
                 .filter(s -> s.equals(at))
@@ -33,6 +35,10 @@ public class MisLog {
 
     }
 
-    public void delAt() {
+    public void delAt() throws IOException {
+        List<String> at = Files.lines(path)
+                .map(s -> s.replaceAll("at", ""))
+                .collect(Collectors.toList());
     }
+
 }
