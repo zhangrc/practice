@@ -16,7 +16,7 @@ import java.util.HashMap;
 @Component("mqSender")
 public class ActiveMqSender implements  MqSender{
 
-    @Autowired
+   // @Autowired
     private JmsTemplate jmsTemplate;
     @Override
     public boolean send(final HashMap map) {

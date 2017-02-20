@@ -12,7 +12,7 @@ import javax.jms.Message;
  */
 @Component("reciver")
 public class ActiveMqReciver implements MqReciver {
-    @Autowired
+    //@Autowired
     private JmsTemplate jmsTemplate;
 
     @Override

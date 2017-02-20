@@ -41,14 +41,14 @@
     <!-- 初始化 DispatcherServlet时，该框架在 web应用程序WEB-INF目录中寻找一个名为[servlet-名称]-servlet.xml的文件，
             并在那里定义相关的Beans，重写在全局中定义的任何Beans -->
     <servlet>
-        <servlet-name>practice</servlet-name>
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <init-param>
-            <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:springMvc.xml</param-value>
-        </init-param>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
+    <servlet-name>practice</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:springMvc.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+</servlet>
     <servlet-mapping>
         <servlet-name>practice</servlet-name>
         <!-- 所有的的请求，都会被DispatcherServlet处理 -->
