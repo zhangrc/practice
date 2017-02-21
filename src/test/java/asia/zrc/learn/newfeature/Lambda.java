@@ -65,12 +65,12 @@ public class Lambda {
                 .map(i -> i * i)
                 .collect(Collectors.toList());
         System.out.println(collect);
-        Optional<Integer> reduce = numbers.stream()
+        int reduce = numbers.stream()
                 .filter(i -> i % i == 0)
                 .map(Math::abs)
                 .map(i -> i + 1)
-                .reduce((i, j) -> i * j);
-        System.out.println(reduce.get());
+                .reduce(1,(i, j) -> i * j);
+        System.out.println(reduce);
     }
 }
 
