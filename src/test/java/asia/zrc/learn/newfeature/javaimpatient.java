@@ -34,7 +34,7 @@ public class javaimpatient {
         l = System.currentTimeMillis();
         words.parallelStream()
                 .filter(s -> s.length() <12)
-                .collect(Collectors.groupingBy(String::length,counting()));
+                .collect(Collectors.groupingBy(String::length,counting())).size();
         System.out.println(System.currentTimeMillis() - l);
     }
 }
