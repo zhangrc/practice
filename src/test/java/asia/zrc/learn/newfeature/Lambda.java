@@ -57,7 +57,7 @@ public class Lambda {
         List<Integer> collect = numbers.stream()
                 .map(i -> i * i)
                 .collect(Collectors.toList());
-        System.out.println(collect);
+        //System.out.println(collect);
         int reduce = numbers.stream()
                 .filter(i -> i % i == 0)
                 .map(Math::abs)

@@ -2,6 +2,7 @@ package asia.zrc.springDemo.datasource;
 
 import asia.zrc.springDemo.common.service.BaseService;
 import asia.zrc.BaseTest;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,6 +13,7 @@ public class DataSourceContextHolderTest extends BaseTest {
     @Autowired
     private BaseService baseService;
 
+    @Ignore
     @Test
     public void testChangeDataSource() {
         //使用默认的数据源

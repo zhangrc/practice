@@ -1,5 +1,6 @@
 package asia.zrc.learn.thread;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.concurrent.*;
@@ -9,6 +10,7 @@ import java.util.stream.Stream;
  * Created by zrc on 2017/2/24.
  */
 public class ThreadRunnerTest {
+    @Ignore
     @Test
     public void testGetWithBlock() throws InterruptedException, ExecutionException {
         int processCount = Runtime.getRuntime().availableProcessors();
@@ -26,7 +28,7 @@ public class ThreadRunnerTest {
         System.out.println("-------------------------------");
         System.out.println(o);
     }
-
+    @Ignore
     @Test
     public void testCachedThreadPool() {
         ExecutorService executor = Executors.newCachedThreadPool();

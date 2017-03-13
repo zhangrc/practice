@@ -1,5 +1,7 @@
 package asia.zrc.springDemo.common.service;
 
+import asia.zrc.springDemo.common.DB.IDao;
+
 import java.sql.Timestamp;
 
 /**
@@ -8,4 +10,6 @@ import java.sql.Timestamp;
 public interface BaseService {
 
     Timestamp getSystemTimeStamp();
+
+    void setDao(IDao dao);
 }

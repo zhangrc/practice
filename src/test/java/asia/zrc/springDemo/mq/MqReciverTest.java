@@ -19,6 +19,7 @@ public class MqReciverTest extends BaseTest {
     private MqReciver reciver;
     @Autowired
     private MqSender sender;
+    @Ignore
     @Test
     public void recive() throws Exception {
         HashMap map = new HashMap();

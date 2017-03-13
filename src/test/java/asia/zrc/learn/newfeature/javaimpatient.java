@@ -29,7 +29,7 @@ public class javaimpatient {
                 .flatMap(r -> Stream.of(r.split("\\PL+")))
                 .filter(s -> s.length() < 12)
                 .count();
-        System.out.println(System.currentTimeMillis() - l);
+       // System.out.println(System.currentTimeMillis() - l);
     }
 
     @Test
@@ -42,6 +42,6 @@ public class javaimpatient {
                 .flatMap(r -> Stream.of(r.split("\\PL+")))
                 .filter(s -> s.length() < 12)
                 .count();
-        System.out.println(System.currentTimeMillis() - l);
+       // System.out.println(System.currentTimeMillis() - l);
     }
 }

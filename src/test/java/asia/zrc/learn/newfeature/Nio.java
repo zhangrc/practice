@@ -1,5 +1,6 @@
 package asia.zrc.learn.newfeature;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.*;
@@ -13,6 +14,7 @@ import java.nio.file.StandardOpenOption;
  * Created by zrc on 2017/2/20.
  */
 public class Nio {
+    @Ignore
     @Test
     public void testNio() throws URISyntaxException, IOException {
         Path path = Paths.get(getClass().getClassLoader().getResource("wap.txt").toURI());

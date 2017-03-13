@@ -14,6 +14,7 @@ import java.util.HashMap;
 public class MqSenderTest extends BaseTest{
     @Autowired
     private MqSender sender;
+    @Ignore
     @Test
     public void testSend() {
         HashMap map = new HashMap();
