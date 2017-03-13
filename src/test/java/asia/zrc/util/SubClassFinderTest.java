@@ -1,5 +1,6 @@
 package asia.zrc.util;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.AbstractList;
@@ -10,6 +11,7 @@ import java.util.List;
  */
 public class SubClassFinderTest {
 
+    @Ignore
     @Test
     public void testFindSubClass() throws ClassNotFoundException {
 //        new SubClassFinder().getAllSubClass(AbstractList.class, "java.util", (Class aClass) -> {

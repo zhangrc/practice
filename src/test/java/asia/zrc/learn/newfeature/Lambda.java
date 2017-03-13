@@ -1,5 +1,6 @@
 package asia.zrc.learn.newfeature;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -18,9 +19,7 @@ public class Lambda {
     @Test
     public void testLambda() throws ExecutionException, InterruptedException {
         ExecutorService executor = Executors.newFixedThreadPool(10);
-        executor.execute(() -> {
-            System.out.println("");
-        });
+        executor.execute(() ->  System.out.println("") );
         Future<Integer> submit = executor.submit(() -> {
             int count = 0;
             for (int i = 0; i < 100; ) {
@@ -30,12 +29,6 @@ public class Lambda {
             return count;
         });
 
-        String world = "111";
-
-        Set<Path> paths = new HashSet<>();
-
-
-        List<Callable<Long>> tasks = new ArrayList<>();
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -70,7 +63,7 @@ public class Lambda {
                 .map(Math::abs)
                 .map(i -> i + 1)
                 .reduce(1,(i, j) -> i * j);
-        System.out.println(reduce);
+        Assert.assertEquals(120,reduce);
     }
 }
 

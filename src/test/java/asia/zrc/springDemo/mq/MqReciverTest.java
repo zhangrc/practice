@@ -1,6 +1,7 @@
 package asia.zrc.springDemo.mq;
 
 import asia.zrc.BaseTest;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,6 +13,7 @@ import static org.junit.Assert.*;
 /**
  * Created by zrc on 2016/9/19.
  */
+@Ignore
 public class MqReciverTest extends BaseTest {
     @Autowired
     private MqReciver reciver;

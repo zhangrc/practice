@@ -24,4 +24,8 @@ public class BaseServiceImpl implements BaseService {
     public Timestamp getSystemTimeStamp() {
         return (Timestamp) getDao().queryObject("common.getSystemTimestamp");
     }
+
+    public void setDao(IDao dao) {
+        this.dao = dao;
+    }
 }
