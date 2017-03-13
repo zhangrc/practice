@@ -24,6 +24,5 @@ public class BuilderClassTest {
         String a = "abc";
         String str = new String("abc");
         Assert.assertEquals(a,str);
-        FileInputStream
     }
 }

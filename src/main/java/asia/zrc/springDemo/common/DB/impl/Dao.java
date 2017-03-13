@@ -24,4 +24,8 @@ public class Dao implements IDao {
     public void setDao(SqlSessionTemplate dao) {
        this.dao = dao;
     }
+
+    public int insert(String id,Object obj) {
+        return dao.insert(id,obj);
+    }
 }
