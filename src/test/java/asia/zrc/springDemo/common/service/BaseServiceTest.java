@@ -12,8 +12,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import java.sql.Timestamp;
-
-import static org.easymock.EasyMock.*;
+import static org.powermock.api.mockito.PowerMockito.*;
 
 /**
  * Created by zrc on 2016/9/9.
@@ -25,11 +24,11 @@ public class BaseServiceTest {
     public void testGetTimeStmp() {
         Timestamp except = new Timestamp(System.currentTimeMillis());
         BaseServiceImpl baseService = new BaseServiceImpl();
-        IDao dao = createMock(IDao.class);
+        IDao dao = mock(IDao.class);  //createMock(IDao.class);
 //        dao.queryObject(eq("common.getSystemTimestamp"));
 //        expectLastCall().andReturn(except);
-        expect(dao.queryObject("common.getSystemTimestamp")).andReturn(except);
-        replay(dao);
+        when(dao.queryObject("common.getSystemTimestamp")).thenReturn(except);
+        //replay(dao);
         baseService.setDao(dao);
         Assert.assertEquals(except, baseService.getSystemTimeStamp());
     }
